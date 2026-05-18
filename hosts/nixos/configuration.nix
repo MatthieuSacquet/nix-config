@@ -161,7 +161,8 @@
     discord
     git
     btop
-    mission-center
+    ripgrep
+    dust
     zed-editor
   ];
 
