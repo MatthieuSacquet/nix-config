@@ -163,7 +163,7 @@
     btop
     ripgrep
     dust
-    zed-editor
+    tree
   ];
 
   home-manager = {
