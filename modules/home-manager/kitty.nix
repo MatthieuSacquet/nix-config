@@ -1,21 +1,21 @@
-{ config, pkgs, ...}
+{ config, pkgs, ...}:
 
 {
 
   programs.kitty = {
   	enable = true;
-	themeFile = "Azy";
+	settings = {
+		background_opacity = "0.8";
+		dynamic_background_opacity = true;
+	};
+  	actionAliases = {
+	 	"cc" = "echo 'cc'";
+	};
 	font = {
-		size = "11";
+		size = 13;
 		name = "Cascadia Code";
 		package = pkgs.cascadia-code;
 	};
-	settings = {
-		background_opacity = "0.5";
-		dynamic_background_opacity = true;
-	};
-	actionAliases = {
-		"cc" = "echo 'cc'";
-	};
+	themeFile = "3024_Night";
   };
 }
