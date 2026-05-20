@@ -25,6 +25,7 @@
     lazygit
     zed-editor
     ripgrep
+    nil # nix language server
   ];
 
   programs.git = {
