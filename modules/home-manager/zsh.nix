@@ -4,8 +4,13 @@
   programs.zsh = {
   	enable = true;
 	autosuggestion.enable = true;
-	autosuggestion.highlight = "fg=#ff00ff,bg=cyan,bold,underline";
+	syntaxHighlighting.enable = false;
 	package = pkgs.zsh;
-  }
+	oh-my-zsh = {
+    		enable = true;
+    		plugins = [ "git" ];
+		theme = "robbyrussell";
+  	};
+  };
 
 }

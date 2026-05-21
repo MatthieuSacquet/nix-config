@@ -2,33 +2,40 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.default
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    inputs.home-manager.nixosModules.default
+  ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # Bootloader.
   # boot.loader.systemd-boot.enable = false;
   # boot.loader.efi.canTouchEfiVariables = false;
 
-   
   boot.loader = {
-        efi = {
-            canTouchEfiVariables = true;
-            efiSysMountPoint = "/boot"; # ← use the same mount point here.
-        };
-        grub = {
-            enable = true;
-            efiSupport = true;
-            #efiInstallAsRemovable = true;
-            device = "nodev";
-        };
+    efi = {
+      canTouchEfiVariables = true;
+      efiSysMountPoint = "/boot"; # ← use the same mount point here.
+    };
+    grub = {
+      enable = true;
+      efiSupport = true;
+      #efiInstallAsRemovable = true;
+      device = "nodev";
+    };
   };
 
   networking.hostName = "nixos"; # Define your hostname.
@@ -71,19 +78,19 @@
   services.xserver.desktopManager.cinnamon.enable = false;
   # services.xserver.displayManager.lightdm.enable = true;
   environment.cinnamon.excludePackages = [
-  	pkgs.blueman
+    pkgs.blueman
   ];
 
   # Enable KBE
 
-    # Enable Plasma 
+  # Enable Plasma
   services.desktopManager.plasma6.enable = true;
 
   # Default display manager for Plasma
   services.displayManager.sddm = {
     enable = true;
-  
-  # To use Wayland (Experimental for SDDM)
+
+    # To use Wayland (Experimental for SDDM)
     wayland.enable = true;
   };
 
@@ -126,21 +133,35 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  home-manager = {
+    extraSpecialArgs = { inherit inputs; };
+    users = {
+      "matth" = import ./home.nix;
+    };
+  };
+
+
+  programs.zsh.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.matth = {
     isNormalUser = true;
     description = "Matth";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-    #  thunderbird
+    extraGroups = [
+      "networkmanager"
+      "wheel"
     ];
+    packages = with pkgs; [
+      #  thunderbird
+    ];
+    shell = pkgs.zsh;
   };
 
   #Garbage
   nix.gc = {
-  	automatic = true;
-  	dates = "weekly";
-	options = "--delete-older-than 30d";
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
   };
 
   # Install firefox.
@@ -153,7 +174,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
+    #  wget
     kitty
     neovim
     fastfetch
@@ -165,12 +186,6 @@
     tree
   ];
 
-  home-manager = {
-	extraSpecialArgs = { inherit inputs; };
-	users = {
-		"matth" = import ./home.nix;
-	};
-  };
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

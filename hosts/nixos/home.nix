@@ -15,30 +15,45 @@
   home.stateVersion = "25.11"; # Please read the comment before changing.
 
   imports = [
-	../../modules/home-manager/btop.nix
-	../../modules/home-manager/kitty.nix
+    ../../modules/home-manager/btop.nix
+    ../../modules/home-manager/kitty.nix
+    ../../modules/home-manager/zsh.nix
+    ../../modules/home-manager/oh_my_posh/oh_my_posh.nix
   ];
   # The home.packages option allows you to install Nix packages into your
   # environment.
+
   home.packages = with pkgs; [
     hello
     mission-center
     lazygit
     zed-editor
     ripgrep
-    nil # nix language server
+    nil
   ];
+
+  programs.oh-my-posh.enableZshIntegration = false;
+
+  programs.zsh.shellAliases = {
+    "n" = "nvim";
+    "rebuild" = "sudo nixos-rebuild switch --flake ~/nix-config/#nixos";
+    "update" = "sudo nixos-rebuild switch --upgrade --flake ~/nix-config/#nixos";
+  };
+
+  programs.kitty.shellIntegration.enableZshIntegration = true;
+  programs.kitty.settings.shell = "${pkgs.zsh}/bin/zsh";
 
   programs.git = {
     enable = true;
     settings = {
       user = {
-        name  = "MatthieuSacquet";
+        name = "MatthieuSacquet";
         email = "matthieu.sacquet@epitech.eu";
       };
       init.defaultBranch = "main";
     };
   };
+
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
