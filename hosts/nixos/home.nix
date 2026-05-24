@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
 
@@ -15,10 +15,12 @@
   home.stateVersion = "25.11"; # Please read the comment before changing.
 
   imports = [
+    inputs.nixvim.homeModules.nixvim
     ../../modules/home-manager/btop.nix
     ../../modules/home-manager/kitty.nix
     ../../modules/home-manager/zsh.nix
     ../../modules/home-manager/oh_my_posh/oh_my_posh.nix
+    ../../modules/home-manager/nixvim/default.nix
   ];
   # The home.packages option allows you to install Nix packages into your
   # environment.
@@ -32,12 +34,14 @@
     nil
   ];
 
+  programs.nixvim.enable = true;
+
   programs.oh-my-posh.enableZshIntegration = false;
 
   programs.zsh.shellAliases = {
     "n" = "nvim";
     "rebuild" = "sudo nixos-rebuild switch --flake ~/nix-config/#nixos";
-    "update" = "sudo nixos-rebuild switch --upgrade --flake ~/nix-config/#nixos";
+    "update" = "cd ~/nix-config && nix flake update && sudo nixos-rebuild switch --flake .#nixos";
   };
 
   programs.kitty.shellIntegration.enableZshIntegration = true;
