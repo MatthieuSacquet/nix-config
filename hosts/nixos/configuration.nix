@@ -143,6 +143,7 @@
 
 
   programs.zsh.enable = true;
+  programs.fish.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.matth = {
@@ -155,7 +156,7 @@
     packages = with pkgs; [
       #  thunderbird
     ];
-    shell = pkgs.zsh;
+    shell = pkgs.fish;
   };
 
   #Garbage

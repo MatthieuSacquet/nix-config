@@ -15,10 +15,10 @@
   home.stateVersion = "25.11"; # Please read the comment before changing.
 
   imports = [
-    inputs.nixvim.homeModules.nixvim
     ../../modules/home-manager/btop.nix
     ../../modules/home-manager/kitty.nix
     ../../modules/home-manager/zsh.nix
+    ../../modules/home-manager/fish.nix
     ../../modules/home-manager/oh_my_posh/oh_my_posh.nix
     ../../modules/home-manager/nixvim/default.nix
   ];
@@ -32,20 +32,19 @@
     zed-editor
     ripgrep
     nil
+    lsd
+    bat
   ];
 
-  programs.nixvim.enable = true;
-
-  programs.oh-my-posh.enableZshIntegration = false;
-
-  programs.zsh.shellAliases = {
+  programs.fish.shellAliases = {
     "n" = "nvim";
+    "ls" = "lsd";
     "rebuild" = "sudo nixos-rebuild switch --flake ~/nix-config/#nixos";
     "update" = "cd ~/nix-config && nix flake update && sudo nixos-rebuild switch --flake .#nixos";
   };
 
-  programs.kitty.shellIntegration.enableZshIntegration = true;
-  programs.kitty.settings.shell = "${pkgs.zsh}/bin/zsh";
+  programs.kitty.shellIntegration.enableFishIntegration = true;
+  programs.kitty.settings.shell = "${pkgs.fish}/bin/fish";
 
   programs.git = {
     enable = true;
