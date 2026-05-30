@@ -172,6 +172,8 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+
+  services.flatpak.enable = true;
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -186,6 +188,14 @@
     ripgrep
     dust
     tree
+    gcc
+    cargo
+    gnumake
+    flatpak
+    inputs.zen-browser.packages.${system}.default
+    clang
+    grc
+    fasd
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

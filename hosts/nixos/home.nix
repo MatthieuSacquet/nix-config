@@ -20,7 +20,7 @@
     ../../modules/home-manager/zsh.nix
     ../../modules/home-manager/fish.nix
     ../../modules/home-manager/oh_my_posh/oh_my_posh.nix
-    ../../modules/home-manager/nixvim/default.nix
+    ../../modules/home-manager/nvf/default.nix
   ];
   # The home.packages option allows you to install Nix packages into your
   # environment.
@@ -34,6 +34,7 @@
     nil
     lsd
     bat
+
   ];
 
   programs.fish.shellAliases = {
