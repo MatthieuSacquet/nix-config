@@ -21,6 +21,8 @@
 
                 globals.mapleader = " ";
 
+                hideSearchHighlight = true;
+
                 luaConfigRC.nvimTreeFix = ''
                   local notify = vim.notify
                   vim.notify = function(msg, log_level, _opts)
@@ -144,6 +146,14 @@
                 #     }
                 # ];
 
+                statusline.lualine = {
+                    enable = true;
+                    theme = "tokyonight";
+                    icons.enable = true;
+                    sectionSeparator = { left = ""; right = ""; };
+                    componentSeparator = { left = ""; right = ""; };
+                };
+
                 filetree.nvimTree = {
                     enable = true;
                     openOnSetup = false;
@@ -199,6 +209,8 @@
                         diagnostics = "<leader>fld";
                         findFiles = "<leader>ff";
                         findProjects = "<leader>fp";
+                        gitStatus = "<leader>fgs";
+                        gitCommits = "<leader>fgc";
                     };
                     extensions = [
                         {
