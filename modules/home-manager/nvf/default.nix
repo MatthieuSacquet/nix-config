@@ -6,8 +6,7 @@
 }:
 
 {
-
-  imports = [ inputs.nvf.homeManagerModules.default ];
+    imports = [ inputs.nvf.homeManagerModules.default ];
 
     programs.nvf = {
         enable = true;
@@ -36,8 +35,8 @@
 
                 theme = {
                     enable = true;
-                    name = "tokyonight";
-                    style = "night";
+                    name = "everforest";
+                    style = "hard";
                     transparent = false;
                 };
 
@@ -49,7 +48,12 @@
                 };
 
                 visuals = {
-                    indent-blankline.enable = true;
+                    indent-blankline = {
+                        enable = true;
+                        setupOpts.exclude.filetypes = [
+                            "dashboard"
+                        ];
+                    };
                     nvim-web-devicons.enable = true;
                 };
 
@@ -136,22 +140,74 @@
 
                 comments.comment-nvim.enable = true;
                 notes.todo-comments.enable = true;
-
-                # keymaps = [
-                #     {
-                #         key = "<leader>e";
-                #         mode = "n";
-                #         silent = true;
-                #         action = ":Neotree toggle<CR>";
-                #     }
-                # ];
+                keymaps = [
+                    {
+                        key = "<C-h>";
+                        mode = "n";
+                        silent = true;
+                        desc = "Go to Left Window";
+                        action = "<C-w>h";
+                    }
+                    {
+                        key = "<C-j>";
+                        mode = "n";
+                        silent = true;
+                        desc = "Go to Lower Window";
+                        action = "<C-w>j";
+                    }
+                    {
+                        key = "<C-k>";
+                        mode = "n";
+                        silent = true;
+                        desc = "Go to Upper Window";
+                        action = "<C-w>h";
+                    }
+                    {
+                        key = "<C-l>";
+                        mode = "n";
+                        silent = true;
+                        desc = "Go to Right Window";
+                        action = "<C-w>l";
+                    }
+                    {
+                        key = "<";
+                        mode = "x";
+                        action = "<gv";
+                    }
+                    {
+                        key = ">";
+                        mode = "x";
+                        action = ">gv";
+                    }
+                    {
+                        key = "<leader>wv";
+                        mode = "n";
+                        silent = true;
+                        desc = "Slip Window vertically";
+                        action = "<C-w>v";
+                    }
+                    {
+                        key = "<leader>wd";
+                        mode = "n";
+                        silent = true;
+                        desc = "Delete Window";
+                        action = "<C-w>q";
+                    }
+                    {
+                        key = "<leader><leader>";
+                        mode = "n";
+                        silent = true;
+                        desc = "Find file";
+                        action = "<cmd>Telescope find_files<CR>";
+                    }
+                ];
 
                 statusline.lualine = {
                     enable = true;
-                    theme = "tokyonight";
+                    theme = "everforest";
                     icons.enable = true;
-                    sectionSeparator = { left = ""; right = ""; };
-                    componentSeparator = { left = ""; right = ""; };
+                    sectionSeparator = { left = ""; right = ""; };
+                    componentSeparator = { left = ""; right = ""; };
                 };
 
                 filetree.nvimTree = {
@@ -191,7 +247,7 @@
                 };
 
                 git.gitsigns = {
-                    enable = true;
+                    enable = false;
                     setupOpts = {
                         attach_to_untracked = true;
                         current_line_blame = true;
@@ -200,6 +256,10 @@
                             virt_text_pos = "eol";
                         };
                     };
+                };
+
+                projects.project-nvim = {
+                    enable = true;
                 };
 
                 telescope = {
@@ -244,6 +304,36 @@
                         };
                     };
                 };
+                dashboard.dashboard-nvim = {
+                    enable = true;
+                    setupOpts = {
+                        theme = "doom";
+                        config = {
+                            hide.statusline = false;
+
+                            header = [
+                                ""
+                                ""
+                                ""
+                                ""
+                                "██████╗ ██╗██╗  ██╗██╗   ██╗██╗███╗   ███╗"
+                                "██╔══██╗██║██║ ██╔╝██║   ██║██║████╗ ████║"
+                                "██████╔╝██║█████╔╝ ██║   ██║██║██╔████╔██║"
+                                "██╔═══╝ ██║██╔═██╗ ╚██╗ ██╔╝██║██║╚██╔╝██║"
+                                "██║     ██║██║  ██╗ ╚████╔╝ ██║██║ ╚═╝ ██║"
+                                "╚═╝     ╚═╝╚═╝  ╚═╝  ╚═══╝  ╚═╝╚═╝     ╚═╝"
+                            ];
+                            center = [
+                                { icon = " "; desc = "Find file"; key = "f"; action = "Telescope find_files"; }
+                                { icon = " "; desc = "Live grep"; key = "g"; action = "Telescope live_grep"; }
+                                { icon = " "; desc = "Find project"; key = "p"; action = "Telescope projects"; }
+                                { icon = "⚙ "; desc = "Config"; key = "c"; action = "e ~/nix-config/modules/home-manager/nvf/default.nix"; }
+                                { icon = " "; desc = "Quit"; key = "q"; action = "qa"; }
+                            ];
+                        };
+                    };
+                };
+
             };
         };
     };

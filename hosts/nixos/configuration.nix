@@ -194,6 +194,7 @@
     flatpak
     inputs.zen-browser.packages.${system}.default
     clang
+    cmake
     grc
     fasd
   ];
