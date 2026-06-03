@@ -135,12 +135,12 @@
   # services.xserver.libinput.enable = true;
 
   home-manager = {
+    backupFileExtension = "backup";
     extraSpecialArgs = { inherit inputs; };
     users = {
       "matth" = import ./home.nix;
     };
   };
-
 
   programs.zsh.enable = true;
   programs.fish.enable = true;
@@ -162,7 +162,7 @@
   #Garbage
   nix.gc = {
     automatic = true;
-    dates = "weekly";
+    dates = "daily";
     options = "--delete-older-than 15d";
   };
 

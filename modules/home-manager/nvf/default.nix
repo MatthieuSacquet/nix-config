@@ -35,8 +35,8 @@
 
                 theme = {
                     enable = true;
-                    name = "everforest";
-                    style = "hard";
+                    name = "nord";
+                    # style = "hard";
                     transparent = false;
                 };
 
@@ -140,7 +140,51 @@
 
                 comments.comment-nvim.enable = true;
                 notes.todo-comments.enable = true;
+
                 keymaps = [
+                    {
+                        key = "<A-j>";
+                        mode = "n";
+                        silent = true;
+                        desc = "Move Down";
+                        action = "<cmd>execute 'move .+' . v:count1<cr>==";
+                    }
+                    {
+                        key = "<A-k>";
+                        mode = "n";
+                        silent = true;
+                        desc = "Move Up";
+                        action = "<cmd>execute 'move .-' . (v:count1 + 1)<cr>==";
+                    }
+                    {
+                        key = "<A-j>";
+                        mode = "i";
+                        silent = true;
+                        desc = "Move Down";
+                        action = "<esc><cmd>m .+1<cr>==gi";
+                    }
+                    {
+                        key = "<A-k>";
+                        mode = "i";
+                        silent = true;
+                        desc = "Move Up";
+                        action = "<esc><cmd>m .-2<cr>==gi";
+                    }
+                    {
+                        key = "<A-k>";
+                        mode = "v";
+                        silent = true;
+                        desc = "Move Down";
+                        action = ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv";
+                    }
+                    {
+                        key = "<A-j>";
+                        mode = "v";
+                        silent = true;
+                        desc = "Move Up";
+                        action = ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv";
+                    }
+
                     {
                         key = "<C-h>";
                         mode = "n";
@@ -204,7 +248,7 @@
 
                 statusline.lualine = {
                     enable = true;
-                    theme = "everforest";
+                    theme = "nord";
                     icons.enable = true;
                     sectionSeparator = { left = ""; right = ""; };
                     componentSeparator = { left = ""; right = ""; };
