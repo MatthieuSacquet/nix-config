@@ -20,7 +20,7 @@
 
                 globals.mapleader = " ";
 
-                hideSearchHighlight = true;
+                hideSearchHighlight = false;
 
                 luaConfigRC.nvimTreeFix = ''
                   local notify = vim.notify
@@ -143,6 +143,13 @@
 
                 keymaps = [
                     {
+                        key = "<Esc>";
+                        mode = "n";
+                        silent = false;
+                        desc = "Escape search";
+                        action = "<cmd>nohlsearch<CR>";
+                    }
+                    {
                         key = "<A-j>";
                         mode = "n";
                         silent = true;
@@ -250,8 +257,8 @@
                     enable = true;
                     theme = "nord";
                     icons.enable = true;
-                    sectionSeparator = { left = ""; right = ""; };
-                    componentSeparator = { left = ""; right = ""; };
+                    # sectionSeparator = { left = ""; right = ""; };
+                    # componentSeparator = { left = ""; right = ""; };
                 };
 
                 filetree.nvimTree = {
@@ -340,6 +347,14 @@
                 };
 
                 utility = {
+                    motion = {
+                        flash-nvim = {
+                            enable = true;
+                            mappings = {
+                                toggle = "<c-s>";
+                            };
+                        };
+                    };
                     images.image-nvim = {
                         enable = true;
                         setupOpts = {
