@@ -5,7 +5,8 @@
 }:
 
 {
-    settings.vim = {
+    
+    programs.nvf.settings.vim = {
         keymaps = [
             {
                 key = "<Esc>";

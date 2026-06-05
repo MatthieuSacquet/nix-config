@@ -12,7 +12,7 @@
 	 	"cc" = "echo 'cc'";
 	};
 	font = {
-		size = 13;
+		size = 15;
 		name = "Cascadia Code";
 		package = pkgs.cascadia-code;
 	};

@@ -1,0 +1,23 @@
+{
+    pkgs,
+    inputs,
+    ...
+}:
+
+{
+    programs.nvf.settings.vim = {
+        terminal = {
+            toggleterm = {
+                enable = true;
+                mappings.open = "<c-t>";
+                setupOpts.direction = "horizontal";
+
+                lazygit = {
+                    enable = true;
+                    direction = "float";
+                    mappings.open = "<leader>gg";
+                };
+            };
+        };
+    };
+}
