@@ -8,7 +8,7 @@
     programs.nvf.settings.vim = {
         statusline.lualine = {
             enable = true;
-            theme = "nord";
+            theme = "auto";
             icons.enable = true;
             # sectionSeparator = { left = ""; right = ""; };
             # componentSeparator = { left = ""; right = ""; };

@@ -4,12 +4,12 @@
     inputs = {
         nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
         # nixvim.url = "github:nix-community/nixvim";
-        zen-browser.url = "github:youwen5/zen-browser-flake";
-        nvf.url = "github:notashelf/nvf";
         home-manager = {
             url = "github:nix-community/home-manager";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+        zen-browser.url = "github:youwen5/zen-browser-flake";
+        nvf.url = "github:notashelf/nvf";
     };
 
     outputs = { self, nixpkgs, nvf, ... }@inputs: {
@@ -22,5 +22,12 @@
                 inputs.home-manager.nixosModules.default
             ];
         };
+        # nixosConfigurations.gaming = nixpkgs.lib.nixosSystem {
+        #     specialArgs = {inherit inputs;};
+        #     modules = [
+        #         ./hosts/nixos/configuration.nix
+        #         inputs.home-manager.nixosModules.default
+        #     ];
+        # };
     };
 }

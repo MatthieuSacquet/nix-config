@@ -34,7 +34,7 @@
     nil
     lsd
     bat
-
+    vlc
   ];
 
   programs.fish.shellAliases = {
