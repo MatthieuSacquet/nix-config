@@ -197,7 +197,9 @@
         clang
         cmake
         grc
+        cbonsai
         fasd
+        inetutils # for install telnet ( there are also other command for network )
     ];
 
     # Some programs need SUID wrappers, can be configured further or are

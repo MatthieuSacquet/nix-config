@@ -33,6 +33,11 @@
             smartcase = true;
             incsearch = true;
             hlsearch = true;
+
+            list = true;
+            listchars = {
+                trail = "~";
+            };
         };
     };
 }

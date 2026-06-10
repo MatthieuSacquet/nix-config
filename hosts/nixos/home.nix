@@ -35,6 +35,7 @@
     lsd
     bat
     vlc
+    python3
   ];
 
   programs.fish.shellAliases = {
