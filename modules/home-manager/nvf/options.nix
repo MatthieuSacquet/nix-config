@@ -11,6 +11,7 @@
             mouse = "a";
             updatetime = 300;
 
+            colorcolumn = "80";
             #number
             cursorline = true;
             number = true;
