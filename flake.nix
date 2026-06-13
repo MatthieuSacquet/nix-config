@@ -10,6 +10,11 @@
         };
         zen-browser.url = "github:youwen5/zen-browser-flake";
         nvf.url = "github:notashelf/nvf";
+        slippi = {
+            url = "github:lytedev/slippi-nix";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
+        chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     };
 
     outputs = { self, nixpkgs, nvf, ... }@inputs: {
@@ -20,6 +25,14 @@
             modules = [
                 ./hosts/nixos/configuration.nix
                 inputs.home-manager.nixosModules.default
+            ];
+        };
+        nixosConfigurations.gaming = nixpkgs.lib.nixosSystem {
+            specialArgs = {inherit inputs;};
+            modules = [
+                ./hosts/gaming/configuration.nix
+                inputs.home-manager.nixosModules.default
+                inputs.chaotic.nixosModules.default # IMPORTANT
             ];
         };
         # nixosConfigurations.gaming = nixpkgs.lib.nixosSystem {
