@@ -207,7 +207,7 @@
         cmake
         cbonsai
 
-        slippi.packages.x86_64-linux.default
+        inputs.slippi.packages.x86_64-linux.default
         heroic # install heroic launcher
         lutris # install lutris launcher
         mumble # install voice-chat
