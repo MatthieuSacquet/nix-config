@@ -212,13 +212,6 @@
         lutris # install lutris launcher
         mumble # install voice-chat
         protonup-qt # GUI for installing custom Proton versions like GE_Proton
-        (retroarch.override {
-            cores = with libretro; [ # decide what emulators you want to include
-            puae # Amiga 500
-            scummvm
-            dosbox
-            ];
-        })
     ];
 
     # Some programs need SUID wrappers, can be configured further or are
