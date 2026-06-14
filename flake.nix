@@ -35,6 +35,12 @@
                 inputs.chaotic.nixosModules.default # IMPORTANT
             ];
         };
+        nixosConfigurations.simple = nixpkgs.lib.nixosSystem {
+            specialArgs = {inherit inputs;};
+            modules = [
+                ./hosts/gaming/configuration.nix
+            ];
+        };
         # nixosConfigurations.gaming = nixpkgs.lib.nixosSystem {
         #     specialArgs = {inherit inputs;};
         #     modules = [
