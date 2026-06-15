@@ -34,6 +34,7 @@
 
         prismlauncher
         vlc
+        wl-clipboard
     ];
 
     programs.fish.shellAliases = {

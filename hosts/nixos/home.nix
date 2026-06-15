@@ -34,10 +34,11 @@
         ripgrep
         nil
         lsd
-        # neovide
+        neovide
         bat
         vlc
         python3
+        wl-clipboard
     ];
 
     programs.fish.shellAliases = {
