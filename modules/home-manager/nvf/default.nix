@@ -53,6 +53,10 @@
                     };
                 };
 
+                treesitter = {
+                    enable = true;
+                };
+
                 visuals = {
                     indent-blankline = {
                         enable = true;
