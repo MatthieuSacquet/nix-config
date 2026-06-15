@@ -38,7 +38,7 @@
         nixosConfigurations.simple = nixpkgs.lib.nixosSystem {
             specialArgs = {inherit inputs;};
             modules = [
-                ./hosts/gaming/configuration.nix
+                ./hosts/simple/configuration.nix
             ];
         };
         # nixosConfigurations.gaming = nixpkgs.lib.nixosSystem {
