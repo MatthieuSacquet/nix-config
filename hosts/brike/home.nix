@@ -17,7 +17,6 @@
     imports = [
         ../../modules/home-manager/btop.nix
         ../../modules/home-manager/kitty.nix
-        ../../modules/home-manager/zsh.nix
         ../../modules/home-manager/fish.nix
         ../../modules/home-manager/oh_my_posh/oh_my_posh.nix
         ../../modules/home-manager/nvf/default.nix
@@ -27,23 +26,20 @@
 
     home.packages = with pkgs; [
         hello
-        kittysay
         mission-center
         lazygit
-        zed-editor
         ripgrep
-        nil
         lsd
-        # neovide
         bat
+
+        prismlauncher
         vlc
-        python3
     ];
 
     programs.fish.shellAliases = {
         "n" = "nvim";
         "ls" = "lsd";
-        "rebuild" = "sudo nixos-rebuild switch --flake ~/nix-config/#nixos";
+        "rebuild" = "sudo nixos-rebuild switch --flake ~/nix-config/#brike";
         "update" = "cd ~/nix-config && nix flake update && rebuild";
     };
 

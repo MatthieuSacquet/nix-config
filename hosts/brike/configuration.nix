@@ -37,7 +37,9 @@
                 #efiInstallAsRemovable = true;
                 device = "nodev";
             };
+            systemd-boot.enable = false;
         };
+        kernelPackages = pkgs.linuxPackages_cachyos-lto;
     };
 
     networking.hostName = "nixos"; # Define your hostname.
@@ -177,6 +179,14 @@
     services.flatpak.enable = true;
     # List packages installed in system profile. To search, run:
     # $ nix search wget
+
+    programs.gamemode.enable = true; # for performance mode
+
+    programs.steam = {
+        enable = true; # install steam
+        remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+        dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+    };
     environment.systemPackages = with pkgs; [
         vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
         #  wget
@@ -186,21 +196,22 @@
         discord
         git
         btop
-        ripgrep
         dust
         tree
         gcc
         cargo
-        clang-tools
         gnumake
         flatpak
         inputs.zen-browser.packages.${system}.default
         clang
         cmake
-        grc
         cbonsai
-        fasd
-        inetutils # for install telnet ( there are also other command for network )
+
+        inputs.slippi.packages.x86_64-linux.default
+        heroic # install heroic launcher
+        lutris # install lutris launcher
+        mumble # install voice-chat
+        protonup-qt # GUI for installing custom Proton versions like GE_Proton
     ];
 
     # Some programs need SUID wrappers, can be configured further or are

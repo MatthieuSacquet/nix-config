@@ -35,18 +35,19 @@
                 inputs.chaotic.nixosModules.default # IMPORTANT
             ];
         };
+        nixosConfigurations.brike = nixpkgs.lib.nixosSystem {
+            specialArgs = {inherit inputs;};
+            modules = [
+                ./hosts/brike/configuration.nix
+                inputs.home-manager.nixosModules.default
+                inputs.chaotic.nixosModules.default # IMPORTANT
+            ];
+        };
         nixosConfigurations.simple = nixpkgs.lib.nixosSystem {
             specialArgs = {inherit inputs;};
             modules = [
                 ./hosts/simple/configuration.nix
             ];
         };
-        # nixosConfigurations.gaming = nixpkgs.lib.nixosSystem {
-        #     specialArgs = {inherit inputs;};
-        #     modules = [
-        #         ./hosts/nixos/configuration.nix
-        #         inputs.home-manager.nixosModules.default
-        #     ];
-        # };
     };
 }
