@@ -35,7 +35,6 @@
         ripgrep
         nil
         lsd
-        neovide
         bat
         vlc
         python3

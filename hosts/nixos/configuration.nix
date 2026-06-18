@@ -182,6 +182,7 @@
         #  wget
         kitty
         neovim
+        neovide
         fastfetch
         discord
         git
