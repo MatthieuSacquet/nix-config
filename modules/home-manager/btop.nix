@@ -7,6 +7,7 @@
             color_theme = "Default";
             theme_background = false;
             graph_symbol = "block";
+            vim_keys = true;
         };
     };
 }

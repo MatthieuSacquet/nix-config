@@ -39,7 +39,11 @@
         vlc
         python3
         wl-clipboard
+        valgrind
+        zellij
     ];
+
+    programs.btop.settings.selected_battery = "BAT1";
 
     programs.fish.shellAliases = {
         "n" = "nvim";
