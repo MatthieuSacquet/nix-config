@@ -143,6 +143,14 @@
         };
     };
 
+
+    hardware.bluetooth = {
+        enable = true;
+        powerOnBoot = false;
+    };
+
+    services.blueman.enable = false;
+
     programs.zsh.enable = true;
     programs.fish.enable = true;
 

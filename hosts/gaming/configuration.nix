@@ -104,6 +104,10 @@
         elisa
     ];
 
+    hardware.bluetooth = {
+        enable = true;
+        powerOnBoot = false;
+    };
     # services.displayManager.plasma-login-manager.enable = false; # enable when I use unstable branch
 
     # Configure keymap in X11
