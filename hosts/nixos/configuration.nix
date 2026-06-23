@@ -83,6 +83,8 @@
         pkgs.blueman
     ];
 
+    programs.nix-ld.enable = true;
+
     # Enable KBE
 
     # Enable Plasma
@@ -102,6 +104,10 @@
         elisa
     ];
 
+    programs.appimage = {
+        enable = true;
+        binfmt = true;
+    };
     # services.displayManager.plasma-login-manager.enable = false; # enable when I use unstable branch
 
     # Configure keymap in X11
@@ -209,6 +215,8 @@
         grc
         cbonsai
         fasd
+        man-pages
+        man-pages-posix
         inetutils # for install telnet ( there are also other command for network )
     ];
 
