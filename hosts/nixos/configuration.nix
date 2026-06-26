@@ -71,18 +71,6 @@
     # Enable the X11 windowing system.
     services.xserver.enable = true;
 
-    # Enable the GNOME Desktop Environment.
-    services.displayManager.gdm.enable = false;
-    services.desktopManager.gnome.enable = false;
-
-    # Enable Cinnamon
-
-    services.xserver.desktopManager.cinnamon.enable = false;
-    # services.xserver.displayManager.lightdm.enable = true;
-    environment.cinnamon.excludePackages = [
-        pkgs.blueman
-    ];
-
     programs.nix-ld.enable = true;
 
     # Enable KBE
@@ -150,9 +138,14 @@
     };
 
 
-    hardware.bluetooth = {
-        enable = true;
-        powerOnBoot = false;
+    hardware = {
+        bluetooth = {
+            enable = true;
+            powerOnBoot = false;
+        };
+        graphics = {
+            enable = true;
+        };
     };
 
     services.blueman.enable = false;
@@ -175,11 +168,11 @@
     };
 
         #Garbage
-        nix.gc = {
-            automatic = true;
-            dates = [ "8:00" ];
-            options = "--delete-older-than 15d";
-        };
+    nix.gc = {
+        automatic = true;
+        dates = [ "8:00" ];
+        options = "--delete-older-than 15d";
+    };
 
     # Install firefox.
     programs.firefox.enable = true;
@@ -212,11 +205,13 @@
         inputs.zen-browser.packages.${system}.default
         clang
         cmake
+        pkg-config
         grc
         cbonsai
         fasd
         man-pages
         man-pages-posix
+
         inetutils # for install telnet ( there are also other command for network )
     ];
 

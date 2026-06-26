@@ -33,7 +33,6 @@
         lazygit
         zed-editor
         ripgrep
-        nil
         lsd
         bat
         vlc
@@ -58,11 +57,11 @@
     programs.git = {
         enable = true;
         settings = {
-        user = {
-            name = "MatthieuSacquet";
-            email = "matthieu.sacquet@epitech.eu";
-        };
-        init.defaultBranch = "main";
+            user = {
+                name = "MatthieuSacquet";
+                email = "matthieu.sacquet@epitech.eu";
+            };
+            init.defaultBranch = "main";
         };
     };
 
