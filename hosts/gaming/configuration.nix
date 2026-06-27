@@ -191,6 +191,19 @@
         remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
         dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
     };
+
+    programs.obs-studio = {
+        enable = true;
+        plugins = with pkgs.obs-studio-plugins; [
+            wlrobs
+            obs-backgroundremoval
+            obs-pipewire-audio-capture
+            obs-vaapi #optional AMD hardware acceleration
+            obs-gstreamer
+            obs-vkcapture
+        ];
+    };
+
     environment.systemPackages = with pkgs; [
         vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
         #  wget
@@ -205,7 +218,6 @@
         gcc
         cargo
         gnumake
-        flatpak
         inputs.zen-browser.packages.${system}.default
         clang
         cmake
