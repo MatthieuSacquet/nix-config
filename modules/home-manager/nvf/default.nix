@@ -89,7 +89,7 @@
                 };
 
                 utility = {
-                    vim-wakatime.enable = true;
+                    vim-wakatime.enable = false;
                     motion = {
                         flash-nvim = {
                             enable = true;
