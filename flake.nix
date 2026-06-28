@@ -14,6 +14,10 @@
             url = "github:lytedev/slippi-nix";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+	    ssbm-nix = {
+	      url = "github:NormalFall/ssbm-nix";
+	      inputs.nixpkgs.follows = "nixpkgs"; # utilise ton nixpkgs pour éviter les doublons
+	    };
         chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     };
 
