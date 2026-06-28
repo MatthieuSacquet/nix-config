@@ -166,12 +166,12 @@
         shell = pkgs.fish;
     };
 
-        #Garbage
-        nix.gc = {
-            automatic = true;
-            dates = [ "8:00" ];
-            options = "--delete-older-than 15d";
-        };
+    #Garbage
+    nix.gc = {
+        automatic = true;
+        dates = [ "20:00" ];
+        options = "--delete-older-than 30d";
+    };
 
     # Install firefox.
     programs.firefox.enable = true;
@@ -224,12 +224,12 @@
         cbonsai
         libGL
         libGLU
-	grc # for fish
-	fasd # for fish
+        grc # for fish
+        fasd # for fish
         zed-editor
         # inputs.slippi.packages.x86_64-linux.default
-	slippi-netplay
-	slippi-launcher
+        slippi-netplay
+        slippi-launcher
         heroic # install heroic launcher
         lutris # install lutris launcher
         mumble # install voice-chat
