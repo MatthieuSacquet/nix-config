@@ -8,8 +8,18 @@
   inputs,
   ...
 }:
+let
+  # Define the custom background package with the correct relative path
+  background-package = pkgs.stdenvNoCC.mkDerivation {
+    name = "background-image";
+    src = ./wallpaper.jpg;  # Place wallpaper.jpg in the same directory as this config file
+    dontUnpack = true;
+    installPhase = ''
+      cp $src $out
+    '';
+  };
 
-{
+in {
     imports = [
         # Include the results of the hardware scan.
         ./hardware-configuration.nix
@@ -81,7 +91,7 @@
     # Default display manager for Plasma
     services.displayManager.sddm = {
         enable = true;
-
+        theme = "breeze";
         # To use Wayland (Experimental for SDDM)
         wayland.enable = true;
     };
@@ -213,6 +223,11 @@
         man-pages-posix
 
         inetutils # for install telnet ( there are also other command for network )
+
+        (writeTextDir "share/sddm/themes/breeze/theme.conf.user" ''
+        [General]
+        background = "${background-package}"
+        '')
     ];
 
     # Some programs need SUID wrappers, can be configured further or are
