@@ -8,8 +8,18 @@
   inputs,
   ...
 }:
+let
+  # Define the custom background package with the correct relative path
+  background-package = pkgs.stdenvNoCC.mkDerivation {
+    name = "background-image";
+    src = ./wallpaper.png;  # Place wallpaper.jpg in the same directory as this config file
+    dontUnpack = true;
+    installPhase = ''
+      cp $src $out
+    '';
+  };
 
-{
+in {
     imports = [
         # Include the results of the hardware scan.
         ./hardware-configuration.nix
@@ -41,6 +51,8 @@
         };
         kernelPackages = pkgs.linuxPackages_cachyos-lto;
     };
+
+# Pour changer le wallpaper du SDDM :
 
     networking.hostName = "nixos"; # Define your hostname.
     # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -94,8 +106,14 @@
     services.displayManager.sddm = {
         enable = true;
 
+        # theme = "breeze";
         # To use Wayland (Experimental for SDDM)
         wayland.enable = true;
+        settings = {
+            Theme = {
+                Background = "home/matt/Pictures/wallpaper/background.png";
+            };
+        };
     };
 
     environment.plasma6.excludePackages = with pkgs.kdePackages; [
@@ -234,6 +252,11 @@
         lutris # install lutris launcher
         mumble # install voice-chat
         protonup-qt # GUI for installing custom Proton versions like GE_Proton
+
+        (writeTextDir "share/sddm/themes/breeze/theme.conf.user" ''
+        [General]
+        background = "${background-package}"
+        '')
     ];
 
     # Some programs need SUID wrappers, can be configured further or are
