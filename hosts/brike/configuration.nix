@@ -39,7 +39,7 @@
             };
             systemd-boot.enable = false;
         };
-        kernelPackages = pkgs.linuxPackages_cachyos-lto;
+        kernelPackages = pkgs.linuxPackages_cachyos-lts;
     };
 
     networking.hostName = "nixos"; # Define your hostname.

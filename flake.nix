@@ -3,21 +3,26 @@
 
     inputs = {
         nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-        # nixvim.url = "github:nix-community/nixvim";
+
         home-manager = {
             url = "github:nix-community/home-manager";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+
         zen-browser.url = "github:youwen5/zen-browser-flake";
+
         nvf.url = "github:notashelf/nvf";
+
         slippi = {
             url = "github:lytedev/slippi-nix";
             inputs.nixpkgs.follows = "nixpkgs";
         };
-	    ssbm-nix = {
-	      url = "github:NormalFall/ssbm-nix";
-	      inputs.nixpkgs.follows = "nixpkgs"; # utilise ton nixpkgs pour éviter les doublons
-	    };
+
+        ssbm-nix = {
+            url = "github:NormalFall/ssbm-nix";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
+
         chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     };
 
