@@ -49,7 +49,8 @@ in {
             };
             systemd-boot.enable = false;
         };
-        kernelPackages = pkgs.linuxPackages_cachyos-lto;
+        # kernelPackages = pkgs.linuxPackages_cachyos;
+        kernelPackages = pkgs.linuxPackages_cachyos-lts;
     };
 
 # Pour changer le wallpaper du SDDM :
