@@ -48,7 +48,16 @@ in {
                 device = "nodev";
             };
         };
+        # kernelParams = ["resume_offset=59584512"];
+        # resumeDevice = "/dev/disk/by-uuid/1cab39e5-ca86-4208-8347-4ae1bd19f833";
     };
+
+    swapDevices = [
+        {
+            device = "/var/lib/swapfile";
+            size = 32 * 1024;
+        }
+    ];
 
     networking.hostName = "nixos"; # Define your hostname.
     # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
