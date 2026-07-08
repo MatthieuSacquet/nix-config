@@ -86,6 +86,10 @@
 
                 projects.project-nvim = {
                     enable = true;
+                    setupOpts = {
+                        manual_mode = true;
+                        patterns = [ ".git" "Makefile" "CMakeLists.txt"];
+                    };
                 };
 
                 utility = {
