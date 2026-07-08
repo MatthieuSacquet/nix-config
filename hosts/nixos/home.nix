@@ -22,6 +22,7 @@
         ../../modules/home-manager/oh_my_posh/oh_my_posh.nix
         ../../modules/home-manager/nvf/default.nix
         ../../modules/home-manager/neovide.nix
+        ./note_workspaces.nix
     ];
     # The home.packages option allows you to install Nix packages into your
     # environment.
