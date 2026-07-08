@@ -3,11 +3,18 @@
     inputs,
     ...
 }:
-
+# <leader>f
 {
     
     programs.nvf.settings.vim = {
         keymaps = [
+            {
+                key = "<leader>eo";
+                mode = "n";
+                silent = false;
+                desc = "Oil";
+                action = "<cmd>Oil<CR>";
+            }
             {
                 key = "<Esc>";
                 mode = "n";

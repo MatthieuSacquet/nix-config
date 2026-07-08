@@ -53,7 +53,12 @@ in {
         kernelPackages = pkgs.linuxPackages_cachyos-lts;
     };
 
-# Pour changer le wallpaper du SDDM :
+    swapDevices = [
+        {
+            device = "/var/lib/swapfile";
+            size = 32 * 1024;
+        }
+    ];
 
     networking.hostName = "nixos"; # Define your hostname.
     # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -189,7 +194,7 @@ in {
     nix.gc = {
         automatic = true;
         dates = [ "20:00" ];
-        options = "--delete-older-than 30d";
+        options = "--delete-older-than 15d";
     };
 
     # Install firefox.

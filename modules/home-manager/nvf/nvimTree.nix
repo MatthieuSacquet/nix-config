@@ -12,7 +12,7 @@
             openOnSetup = false;
 
             mappings = {
-                toggle = "<leader>e";
+                toggle = "<leader>ee";
                 refresh = "<leader>re";
             };
 

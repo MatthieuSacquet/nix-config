@@ -39,6 +39,9 @@
             listchars = {
                 trail = "~";
             };
+
+            conceallevel = 2;
+            concealcursor = "nc";
         };
     };
 }

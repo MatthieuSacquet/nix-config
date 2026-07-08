@@ -19,6 +19,7 @@
         ./options.nix
         ./telescope.nix
         ./terminal.nix
+        ./neorg.nix
     ];
 
     programs.nvf = {
@@ -32,6 +33,7 @@
                 vimAlias = true;
 
                 globals.mapleader = " ";
+                globals.maplocalleader = "²";
 
                 hideSearchHighlight = false;
 
@@ -50,6 +52,7 @@
                     enable = true;
                     register = {
                         "<leader>f" = "+Telescope";
+                        "<leader>e" = "+FileExplorer";
                     };
                 };
 
@@ -82,8 +85,9 @@
                 };
 
                 comments.comment-nvim.enable = true;
-                notes.todo-comments.enable = true;
-
+                notes = {
+                    todo-comments.enable = true;
+                };
                 projects.project-nvim = {
                     enable = true;
                     setupOpts = {
@@ -93,6 +97,23 @@
                 };
 
                 utility = {
+                    oil-nvim = {
+                        enable = true;
+                        gitStatus.enable = true;
+                        setupOpts = {
+                            default_file_explorer = true;
+                            colums = [
+                                # "icon"
+                                "size"
+                                "permissions"
+                                "mtime"
+                            ];
+                            use_default_keymaps = true;
+                            view_options = {
+                                show_hidden = false;
+                            };
+                        };
+                    };
                     vim-wakatime.enable = false;
                     motion = {
                         flash-nvim = {
