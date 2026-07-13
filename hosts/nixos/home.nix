@@ -23,7 +23,8 @@
         ../../modules/home-manager/oh_my_posh/oh_my_posh.nix
         ../../modules/home-manager/nvf/default.nix
         ../../modules/home-manager/neovide.nix
-        ../../modules/home-manager/plasma_manager.nix
+        ../../modules/home-manager/plasma_config/default_plasma_config.nix
+
         ./note_workspaces.nix
     ];
     # The home.packages option allows you to install Nix packages into your
