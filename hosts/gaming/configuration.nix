@@ -251,7 +251,6 @@ in {
         grc # for fish
         fasd # for fish
         zed-editor
-        # inputs.slippi.packages.x86_64-linux.default
         slippi-netplay
         slippi-launcher
         heroic # install heroic launcher
