@@ -21,6 +21,7 @@
         "flakes"
     ];
 
+    nixpkgs.overlays = [ inputs.ssbm-nix.overlays.default ];
     # Bootloader.
     # boot.loader.systemd-boot.enable = false;
     # boot.loader.efi.canTouchEfiVariables = false;
@@ -48,6 +49,13 @@
     # Configure network proxy if necessary
     # networking.proxy.default = "http://user:password@proxy:port/";
     # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+
+    swapDevices = [
+        {
+            device = "/var/lib/swapfile";
+            size = 32 * 1024;
+        }
+    ];
 
     # Enable networking
     networking.networkmanager.enable = true;
