@@ -72,6 +72,14 @@ in {
     # Set your time zone.
     time.timeZone = "Europe/Paris";
 
+    # fix the bug when Rebuild -> layout set at default (us)
+    environment.variables = {
+        XKB_DEFAULT_LAYOUT = "fr";
+        XKB_DEFAULT_VARIANT = "";
+    };
+    services.displayManager.sddm.settings.General.GreeterEnvironment =
+        "XKB_DEFAULT_LAYOUT=fr,XKB_DEFAULT_VARIANT=";
+
     # Select internationalisation properties.
     i18n.defaultLocale = "en_US.UTF-8";
 
