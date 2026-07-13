@@ -15,12 +15,14 @@
     home.stateVersion = "25.11"; # Please read the comment before changing.
 
     imports = [
+        inputs.plasma-manager.homeManagerModules.plasma-manager
         ../../modules/home-manager/btop.nix
         ../../modules/home-manager/kitty.nix
         ../../modules/home-manager/fish.nix
         ../../modules/home-manager/oh_my_posh/oh_my_posh.nix
         ../../modules/home-manager/nvf/default.nix
         ./note_workspaces.nix
+        ../../modules/home-manager/plasma_config/gaming_plasma_config.nix
     ];
     # The home.packages option allows you to install Nix packages into your
     # environment.
