@@ -251,8 +251,11 @@ in {
         grc # for fish
         fasd # for fish
         zed-editor
+        appimage-run
+        # inputs.slippi.packages.x86_64-linux.default
         slippi-netplay
         slippi-launcher
+        wine
         heroic # install heroic launcher
         lutris # install lutris launcher
         mumble # install voice-chat
