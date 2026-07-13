@@ -15,6 +15,7 @@
     home.stateVersion = "25.11"; # Please read the comment before changing.
 
     imports = [
+        inputs.plasma-manager.homeManagerModules.plasma-manager
         ../../modules/home-manager/btop.nix
         ../../modules/home-manager/kitty.nix
         ../../modules/home-manager/fish.nix
