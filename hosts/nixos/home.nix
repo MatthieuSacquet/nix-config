@@ -15,6 +15,7 @@
     home.stateVersion = "25.11"; # Please read the comment before changing.
 
     imports = [
+        inputs.plasma-manager.homeManagerModules.plasma-manager
         ../../modules/home-manager/btop.nix
         ../../modules/home-manager/kitty.nix
         ../../modules/home-manager/zsh.nix
@@ -22,6 +23,7 @@
         ../../modules/home-manager/oh_my_posh/oh_my_posh.nix
         ../../modules/home-manager/nvf/default.nix
         ../../modules/home-manager/neovide.nix
+        ../../modules/home-manager/plasma_manager.nix
         ./note_workspaces.nix
     ];
     # The home.packages option allows you to install Nix packages into your
