@@ -67,6 +67,15 @@ in {
     # networking.proxy.default = "http://user:password@proxy:port/";
     # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
+    # fix the bug when Rebuild -> layout set at default (us)
+    environment.variables = {
+        XKB_DEFAULT_LAYOUT = "fr";
+        XKB_DEFAULT_VARIANT = "";
+    };
+    services.displayManager.sddm.settings.General.GreeterEnvironment =
+        "XKB_DEFAULT_LAYOUT=fr,XKB_DEFAULT_VARIANT=";
+
+
     # Enable networking
     networking.networkmanager.enable = true;
 
