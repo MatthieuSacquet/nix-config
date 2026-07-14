@@ -251,7 +251,7 @@ in {
         gcc
         cargo
         gnumake
-        inputs.zen-browser.packages.${system}.default
+        inputs.zen-browser.packages.${stdenv.hostPlatform.system}.default
         clang
         cmake
         cbonsai
