@@ -24,6 +24,8 @@
         ../../modules/home-manager/nvf/default.nix
         ../../modules/home-manager/neovide.nix
         ../../modules/home-manager/plasma_config/default_plasma_config.nix
+        ../../modules/home-manager/niri/niri.nix
+        ../../modules/home-manager/niri/noctalia.nix
 
         ./note_workspaces.nix
     ];
@@ -44,6 +46,10 @@
         wl-clipboard
         valgrind
         zellij
+        rofi
+        swaybg
+        alacritty
+        nautilus
     ];
 
     programs.btop.settings.selected_battery = "BAT1";
@@ -83,6 +89,8 @@
         #   org.gradle.daemon.idletimeout=3600000
         # '';
     };
+
+    # xdg.configFile."niri/config.kdl".source = ../../modules/home-manager/niri/config.kdl;
 
     home.sessionVariables = {
         # EDITOR = "emacs";

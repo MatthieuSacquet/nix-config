@@ -13,11 +13,6 @@
 
         nvf.url = "github:notashelf/nvf";
 
-        # slippi = {
-        #     url = "github:lytedev/slippi-nix";
-        #     inputs.nixpkgs.follows = "nixpkgs";
-        # };
-
         plasma-manager = {
             url = "github:nix-community/plasma-manager";
             inputs.nixpkgs.follows = "nixpkgs";
@@ -26,6 +21,16 @@
 
         ssbm-nix = {
             url = "github:NormalFall/ssbm-nix";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
+
+        noctalia = {
+            url = "github:noctalia-dev/noctalia/legacy-v4";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
+
+        niri = {
+            url = "github:sodiboo/niri-flake";
             inputs.nixpkgs.follows = "nixpkgs";
         };
 

@@ -238,7 +238,7 @@ layout {
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
-spawn-at-startup "qs" "-c" "noctalia-shell"
+spawn-at-startup "noctalia-shell"
 spawn-sh-at-startup "swaybg -i ~/Pictures/background"
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
@@ -317,12 +317,12 @@ binds {
     // Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
-    Mod+X { spawn-sh "qs -c noctalia-shell ipc call settings toggle"; }
-    Mod+D { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
-    Mod+S { spawn-sh "qs -c noctalia-shell ipc call controlCenter toggle"; }
-    Mod+B {spawn-sh "qs -c noctalia-shell ipc call bluetooth togglePanel";}
-    Mod+P { spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle";}
-    Mod+W { spawn-sh "qs -c noctalia-shell ipc call network togglePanel";}
+    Mod+X { spawn-sh "noctalia-shell ipc call settings toggle"; }
+    Mod+D { spawn-sh "noctalia-shell ipc call launcher toggle"; }
+    Mod+S { spawn-sh "noctalia-shell ipc call controlCenter toggle"; }
+    Mod+B {spawn-sh "noctalia-shell ipc call bluetooth togglePanel";}
+    Mod+P { spawn-sh "noctalia-shell ipc call sessionMenu toggle";}
+    Mod+W { spawn-sh "noctalia-shell ipc call network togglePanel";}
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
     // For example, this is a standard bind to toggle the screen reader (orca).

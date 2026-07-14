@@ -168,7 +168,7 @@ in {
     hardware = {
         bluetooth = {
             enable = true;
-            powerOnBoot = false;
+            powerOnBoot = true;
         };
         graphics = {
             enable = true;
@@ -208,6 +208,9 @@ in {
     nixpkgs.config.allowUnfree = true;
 
 
+    programs.niri.enable = true;
+
+
     services.flatpak.enable = true;
     # List packages installed in system profile. To search, run:
     # $ nix search wget
@@ -240,6 +243,9 @@ in {
         man-pages-posix
 
         inetutils # for install telnet ( there are also other command for network )
+
+        niri
+        xwayland-satellite
 
         (writeTextDir "share/sddm/themes/breeze/theme.conf.user" ''
         [General]
