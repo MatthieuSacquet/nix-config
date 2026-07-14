@@ -102,6 +102,7 @@
                         bottom-left = 10.0;
                     };
                     clip-to-geometry = true;
+                    draw-border-with-background = false;
                 }
             ];
 
