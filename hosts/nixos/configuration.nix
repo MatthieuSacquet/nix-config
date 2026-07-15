@@ -194,10 +194,10 @@ in {
         shell = pkgs.fish;
     };
 
-        #Garbage
+    #Garbage
     nix.gc = {
         automatic = true;
-        dates = [ "8:00" ];
+        dates = [ "11:00" ];
         options = "--delete-older-than 15d";
     };
 

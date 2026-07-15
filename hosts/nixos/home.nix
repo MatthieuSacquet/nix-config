@@ -49,6 +49,8 @@
         swaybg
         alacritty
         nautilus
+        evtest
+        brightnessctl
     ];
 
     programs.btop.settings.selected_battery = "BAT1";
