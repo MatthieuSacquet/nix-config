@@ -139,7 +139,7 @@ in {
 
     hardware.bluetooth = {
         enable = true;
-        powerOnBoot = false;
+        powerOnBoot = true;
     };
     # services.displayManager.plasma-login-manager.enable = false; # enable when I use unstable branch
 
