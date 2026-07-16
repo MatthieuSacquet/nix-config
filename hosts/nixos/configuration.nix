@@ -236,9 +236,9 @@ in {
         clang
         cmake
         pkg-config
-        grc
+        grc # for fish
         cbonsai
-        fasd
+        fasd # for fish
         man-pages
         man-pages-posix
 

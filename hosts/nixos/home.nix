@@ -45,12 +45,11 @@
         wl-clipboard
         valgrind
         zellij
-        rofi
         swaybg
         alacritty
-        nautilus
+        nautilus # for Niri, Dolphin don't work well with niri
         evtest
-        brightnessctl
+        brightnessctl # for noctalia shell
     ];
 
     programs.btop.settings.selected_battery = "BAT1";
