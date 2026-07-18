@@ -59,6 +59,7 @@ in {
         }
     ];
 
+
     networking.hostName = "nixos"; # Define your hostname.
     # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -224,6 +225,7 @@ in {
         discord
         git
         btop
+        caligula # for flash usb
         ripgrep
         dust
         tree
