@@ -31,6 +31,7 @@ in {
         "flakes"
     ];
 
+    nixpkgs.overlays = [ inputs.ssbm-nix.overlays.default ];
     # Bootloader.
     # boot.loader.systemd-boot.enable = false;
     # boot.loader.efi.canTouchEfiVariables = false;
@@ -48,8 +49,7 @@ in {
                 device = "nodev";
             };
         };
-        # kernelParams = ["resume_offset=59584512"];
-        # resumeDevice = "/dev/disk/by-uuid/1cab39e5-ca86-4208-8347-4ae1bd19f833";
+        kernelPackages = pkgs.linuxPackages_cachyos-lts;
     };
 
     swapDevices = [
@@ -211,16 +211,35 @@ in {
 
     programs.niri.enable = true;
 
+    programs.obs-studio = {
+        enable = true;
+        plugins = with pkgs.obs-studio-plugins; [
+            wlrobs
+            obs-backgroundremoval
+            obs-pipewire-audio-capture
+            obs-vaapi #optional AMD hardware acceleration
+            obs-gstreamer
+            obs-vkcapture
+        ];
+    };
 
     services.flatpak.enable = true;
     # List packages installed in system profile. To search, run:
     # $ nix search wget
+
+    programs.gamemode.enable = true; # for performance mode
+
+    programs.steam = {
+        enable = true; # install steam
+        remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+        dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+    };
+
     environment.systemPackages = with pkgs; [
         vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-        #  wget
+        wget
         kitty
         neovim
-        neovide
         fastfetch
         discord
         git
@@ -230,10 +249,10 @@ in {
         dust
         tree
         gcc
-        cargo
         clang-tools
         gnumake
         flatpak
+        superfile
         inputs.zen-browser.packages.${stdenv.hostPlatform.system}.default
         clang
         cmake
@@ -244,6 +263,7 @@ in {
         man-pages
         man-pages-posix
 
+        slippi-netplay
         inetutils # for install telnet ( there are also other command for network )
 
         niri

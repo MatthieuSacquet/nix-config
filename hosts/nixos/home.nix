@@ -21,7 +21,6 @@
         ../../modules/home-manager/fish.nix
         ../../modules/home-manager/oh_my_posh/oh_my_posh.nix
         ../../modules/home-manager/nvf/default.nix
-        ../../modules/home-manager/neovide.nix
         ../../modules/home-manager/plasma_config/default_plasma_config.nix
         ../../modules/home-manager/niri/niri.nix
         ../../modules/home-manager/niri/noctalia.nix
@@ -50,6 +49,8 @@
         nautilus # for Niri, Dolphin don't work well with niri
         evtest
         brightnessctl # for noctalia shell
+
+        rustup
     ];
 
     programs.btop.settings.selected_battery = "BAT1";

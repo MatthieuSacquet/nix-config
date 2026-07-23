@@ -35,6 +35,7 @@
         };
 
         chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+
     };
 
     outputs = { self, nixpkgs, nvf, ... }@inputs: {
@@ -45,6 +46,7 @@
             modules = [
                 ./hosts/nixos/configuration.nix
                 inputs.home-manager.nixosModules.default
+                inputs.chaotic.nixosModules.default # IMPORTANT
             ];
         };
         nixosConfigurations.gaming = nixpkgs.lib.nixosSystem {
