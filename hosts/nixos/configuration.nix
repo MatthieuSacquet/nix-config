@@ -252,7 +252,7 @@ in {
         clang-tools
         gnumake
         flatpak
-        superfile
+        # superfile
         inputs.zen-browser.packages.${stdenv.hostPlatform.system}.default
         clang
         cmake

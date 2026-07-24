@@ -24,7 +24,7 @@
         ../../modules/home-manager/plasma_config/default_plasma_config.nix
         ../../modules/home-manager/niri/niri.nix
         ../../modules/home-manager/niri/noctalia.nix
-
+        ../../modules/home-manager/superfile.nix
         ./note_workspaces.nix
     ];
     # The home.packages option allows you to install Nix packages into your
@@ -60,6 +60,8 @@
         "ls" = "lsd";
         "rebuild" = "sudo nixos-rebuild switch --flake ~/nix-config/#nixos";
         "update" = "cd ~/nix-config && nix flake update && rebuild";
+        "eject" = "udisksctl unmount -b";
+        "mt" = "udisksctl mount -b";
     };
 
     programs.kitty.shellIntegration.enableFishIntegration = true;
