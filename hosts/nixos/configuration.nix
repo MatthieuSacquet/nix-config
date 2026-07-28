@@ -31,9 +31,8 @@ in {
         "flakes"
     ];
 
-    nixpkgs.overlays = [ inputs.ssbm-nix.overlays.default inputs.niri.overlays.niri];
+    nixpkgs.overlays = [ inputs.ssbm-nix.overlays.default ];
 
-    programs.niri.package = pkgs.niri-unstable;
     # Bootloader.
     # boot.loader.systemd-boot.enable = false;
     # boot.loader.efi.canTouchEfiVariables = false;
@@ -287,7 +286,6 @@ in {
         slippi-netplay
         inetutils # for install telnet ( there are also other command for network )
 
-        niri
         xwayland-satellite
 
         (writeTextDir "share/sddm/themes/breeze/theme.conf.user" ''

@@ -22,7 +22,6 @@
         ../../modules/home-manager/oh_my_posh/oh_my_posh.nix
         ../../modules/home-manager/nvf/default.nix
         ../../modules/home-manager/plasma_config/default_plasma_config.nix
-        ../../modules/home-manager/niri/niri.nix
         ../../modules/home-manager/niri/noctalia.nix
         ../../modules/home-manager/superfile.nix
         ./note_workspaces.nix
@@ -98,6 +97,6 @@
     home.sessionVariables = {
         # EDITOR = "emacs";
     };
-
+    xdg.configFile."niri/config.kdl".source = ../../modules/home-manager/niri/config.kdl;
     programs.home-manager.enable = true;
 }

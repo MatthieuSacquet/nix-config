@@ -29,11 +29,6 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
-        niri = {
-            url = "github:sodiboo/niri-flake";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
-
         chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
     };
