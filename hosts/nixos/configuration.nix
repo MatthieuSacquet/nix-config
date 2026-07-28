@@ -225,7 +225,7 @@ in {
     nixpkgs.config.allowUnfree = true;
 
 
-    programs.niri.enable = true;
+    programs.niri.enable = false;
 
     programs.obs-studio = {
         enable = true;
@@ -282,7 +282,6 @@ in {
         man-pages-posix
 
         ubase # for lsusb
-
         slippi-netplay
         inetutils # for install telnet ( there are also other command for network )
 
