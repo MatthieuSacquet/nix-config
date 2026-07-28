@@ -16,8 +16,19 @@
             markdown.enable = true;
             nix.enable = true;
             python.enable = true;
-            rust.enable = true;
+            rust = {
+                enable = true;
+                lsp = {
+                    enable = true;
+                    servers = [ "rust-analyzer" ];
+                };
+                treesitter.enable = true;
+            };
             zig.enable = true;
+            typescript = {
+                enable = true;
+                treesitter.jsPackage = pkgs.vimPlugins.nvim-treesitter.grammarPlugins.javascript;
+            };
         };
     };
 }
