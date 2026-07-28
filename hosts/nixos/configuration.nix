@@ -31,7 +31,9 @@ in {
         "flakes"
     ];
 
-    nixpkgs.overlays = [ inputs.ssbm-nix.overlays.default ];
+    nixpkgs.overlays = [ inputs.ssbm-nix.overlays.default inputs.niri.overlays.niri];
+
+    programs.niri.package = pkgs.niri-unstable;
     # Bootloader.
     # boot.loader.systemd-boot.enable = false;
     # boot.loader.efi.canTouchEfiVariables = false;
