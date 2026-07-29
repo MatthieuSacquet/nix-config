@@ -50,7 +50,7 @@ in {
             systemd-boot.enable = false;
         };
         # kernelPackages = pkgs.linuxPackages_cachyos;
-        kernelPackages = pkgs.linuxPackages_cachyos-lts;
+        kernelPackages = pkgs.linuxPackages_cachyos;
     };
 
     swapDevices = [
