@@ -33,7 +33,7 @@
         ripgrep
         lsd
         bat
-
+        haruna
         prismlauncher
         vlc
 

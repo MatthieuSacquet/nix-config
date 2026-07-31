@@ -29,6 +29,14 @@
                 enable = true;
                 treesitter.jsPackage = pkgs.vimPlugins.nvim-treesitter.grammarPlugins.javascript;
             };
+            arduino = {
+                enable = true;
+                lsp = {
+                    enable = true;
+                    servers = [ "arduino-language-server" ];
+                };
+                treesitter.enable = true;
+            };
         };
     };
 }

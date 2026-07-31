@@ -31,6 +31,7 @@
 
     home.packages = with pkgs; [
         hello
+        haruna
         kittysay
         mission-center
         lazygit

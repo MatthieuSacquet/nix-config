@@ -29,6 +29,7 @@
     home.packages = with pkgs; [
         hello
         brave
+        haruna
         mission-center
         lazygit
         ripgrep
