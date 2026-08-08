@@ -92,6 +92,26 @@
         "type": "github"
       }
     },
+    "hyprmod": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1786171442,
+        "narHash": "sha256-uhJaXmPQhOGKvQLxqgJbtb9YIYJ/4Zd8aQNN5xpVduI=",
+        "owner": "BlueManCZ",
+        "repo": "hyprmod",
+        "rev": "c1edad16510538190f65cde0f27fc2825045ce04",
+        "type": "github"
+      },
+      "original": {
+        "owner": "BlueManCZ",
+        "repo": "hyprmod",
+        "type": "github"
+      }
+    },
     "mnw": {
       "locked": {
         "lastModified": 1780772958,
@@ -260,6 +280,7 @@
       "inputs": {
         "chaotic": "chaotic",
         "home-manager": "home-manager_2",
+        "hyprmod": "hyprmod",
         "nixpkgs": "nixpkgs_2",
         "noctalia": "noctalia",
         "nvf": "nvf",

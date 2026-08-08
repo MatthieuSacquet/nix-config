@@ -31,8 +31,10 @@
 
     home.packages = with pkgs; [
         hello
+        hyprshot
         haruna
         kittysay
+        arduino-ide
         mission-center
         lazygit
         zed-editor
@@ -50,6 +52,8 @@
         evtest
         brightnessctl # for noctalia shell
 
+        fuzzel
+        foot
         rustup
     ];
 
@@ -92,12 +96,13 @@
         #   org.gradle.daemon.idletimeout=3600000
         # '';
     };
-
+    home.file.".config/hypr".source = ../../modules/home-manager/hypr;
     # xdg.configFile."niri/config.kdl".source = ../../modules/home-manager/niri/config.kdl;
 
     home.sessionVariables = {
         # EDITOR = "emacs";
     };
     xdg.configFile."niri/config.kdl".source = ../../modules/home-manager/niri/config.kdl;
+    xdg.configFile."mango/config.conf".source = ../../modules/home-manager/mangowc/config.conf;
     programs.home-manager.enable = true;
 }

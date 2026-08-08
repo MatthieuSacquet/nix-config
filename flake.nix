@@ -31,6 +31,10 @@
 
         chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
+        hyprmod = {
+            url = "github:BlueManCZ/hyprmod";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
     };
 
     outputs = { self, nixpkgs, nvf, ... }@inputs: {

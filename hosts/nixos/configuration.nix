@@ -96,6 +96,7 @@ in {
         XKB_DEFAULT_LAYOUT = "fr";
         XKB_DEFAULT_VARIANT = "";
     };
+
     services.displayManager.sddm.settings.General.GreeterEnvironment =
         "XKB_DEFAULT_LAYOUT=fr,XKB_DEFAULT_VARIANT=";
 
@@ -123,6 +124,7 @@ in {
 
     # Enable Plasma
     services.desktopManager.plasma6.enable = true;
+    programs.kdeconnect.enable = true; # enable kdeconnect
 
     # Default display manager for Plasma
     services.displayManager.sddm = {
@@ -204,6 +206,7 @@ in {
         extraGroups = [
             "networkmanager"
             "wheel"
+            "dialout"
         ];
         packages = with pkgs; [
         #  thunderbird
@@ -251,6 +254,12 @@ in {
         dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
     };
 
+    programs.hyprland = {
+        enable = true;
+        withUWSM = true; # recommended for most users
+        xwayland.enable = true; # Xwayland can be disabled.
+    };
+
     environment.systemPackages = with pkgs; [
         vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
         wget
@@ -272,6 +281,7 @@ in {
         flatpak
         # superfile
         inputs.zen-browser.packages.${stdenv.hostPlatform.system}.default
+        inputs.hyprmod.packages.${pkgs.stdenv.hostPlatform.system}.default
         clang
         cmake
         pkg-config
