@@ -246,6 +246,7 @@ in {
         discord
         git
         btop
+        solaar
         dust
         tree
         gcc
