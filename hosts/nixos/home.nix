@@ -52,9 +52,6 @@
         evtest
         brightnessctl # for noctalia shell
 
-        fuzzel
-        foot
-        rustup
     ];
 
     programs.btop.settings.selected_battery = "BAT1";
@@ -95,8 +92,13 @@
         #   org.gradle.console=verbose
         #   org.gradle.daemon.idletimeout=3600000
         # '';
+        ".config/hypr".source = ../../modules/config-file/hypr;
+        ".config/fastfetch".source = ../../modules/config-file/fastfetch;
+
     };
-    home.file.".config/hypr".source = ../../modules/home-manager/hypr;
+    # home.file.".config/hypr".source = ../../modules/config-file/hypr;
+    # home.file.".config/fastfetch".source = ../../modules/config-file/fastfetch;
+
     # xdg.configFile."niri/config.kdl".source = ../../modules/home-manager/niri/config.kdl;
 
     home.sessionVariables = {

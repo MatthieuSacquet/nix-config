@@ -31,7 +31,6 @@ in {
         "flakes"
     ];
 
-    nixpkgs.overlays = [ inputs.ssbm-nix.overlays.default ];
 
     # Bootloader.
     # boot.loader.systemd-boot.enable = false;
@@ -50,7 +49,6 @@ in {
                 device = "nodev";
             };
         };
-        kernelPackages = pkgs.linuxPackages_cachyos-lts;
     };
 
     swapDevices = [
@@ -292,7 +290,6 @@ in {
         man-pages-posix
 
         ubase # for lsusb
-        slippi-netplay
         inetutils # for install telnet ( there are also other command for network )
 
         xwayland-satellite

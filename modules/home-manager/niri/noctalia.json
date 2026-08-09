@@ -274,7 +274,7 @@
   "wallpaper": {
     "enabled": true,
     "overviewEnabled": false,
-    "directory": "/home/matth/Pictures/wallpaper",
+    "directory": "/home/matth/Pictures/wallpapers",
     "monitorDirectories": [],
     "enableMultiMonitorDirectories": false,
     "showHiddenFiles": false,
