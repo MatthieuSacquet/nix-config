@@ -105,6 +105,5 @@
         # EDITOR = "emacs";
     };
     xdg.configFile."niri/config.kdl".source = ../../modules/home-manager/niri/config.kdl;
-    xdg.configFile."mango/config.conf".source = ../../modules/home-manager/mangowc/config.conf;
     programs.home-manager.enable = true;
 }

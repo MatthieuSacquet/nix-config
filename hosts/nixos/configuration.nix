@@ -298,6 +298,7 @@ in {
         [General]
         background = "${background-package}"
         '')
+        arduino-cli
     ];
     system.stateVersion = "25.11"; # Did you read the comment?
 
