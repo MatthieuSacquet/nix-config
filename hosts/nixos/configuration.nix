@@ -279,7 +279,7 @@ in {
         flatpak
         # superfile
         inputs.zen-browser.packages.${stdenv.hostPlatform.system}.default
-        inputs.hyprmod.packages.${pkgs.stdenv.hostPlatform.system}.default
+        inputs.hyprmod.packages.${stdenv.hostPlatform.system}.default
         clang
         cmake
         pkg-config

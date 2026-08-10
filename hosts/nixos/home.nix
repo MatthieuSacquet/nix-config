@@ -52,6 +52,7 @@
         evtest
         brightnessctl # for noctalia shell
 
+        jq
     ];
 
     programs.btop.settings.selected_battery = "BAT1";
