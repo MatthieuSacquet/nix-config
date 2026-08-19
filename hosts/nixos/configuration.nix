@@ -49,6 +49,7 @@ in {
                 device = "nodev";
             };
         };
+        kernelPackages = pkgs.linuxPackages_latest;
     };
 
     swapDevices = [
