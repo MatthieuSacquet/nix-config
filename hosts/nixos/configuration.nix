@@ -49,6 +49,7 @@ in {
                 device = "nodev";
             };
         };
+        kernelPackages = pkgs.linuxPackages_latest;
     };
 
     swapDevices = [
@@ -279,7 +280,7 @@ in {
         flatpak
         # superfile
         inputs.zen-browser.packages.${stdenv.hostPlatform.system}.default
-        inputs.hyprmod.packages.${pkgs.stdenv.hostPlatform.system}.default
+        inputs.hyprmod.packages.${stdenv.hostPlatform.system}.default
         clang
         cmake
         pkg-config
@@ -299,6 +300,7 @@ in {
         background = "${background-package}"
         '')
         arduino-cli
+
     ];
     system.stateVersion = "25.11"; # Did you read the comment?
 

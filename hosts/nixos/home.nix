@@ -29,6 +29,8 @@
     # The home.packages option allows you to install Nix packages into your
     # environment.
 
+    nixpkgs.config.allowUnfree = true;
+
     home.packages = with pkgs; [
         hello
         hyprshot
@@ -52,6 +54,9 @@
         evtest
         brightnessctl # for noctalia shell
 
+        jq # for Update noctalia shell settings
+
+        google-chrome
     ];
 
     programs.btop.settings.selected_battery = "BAT1";
