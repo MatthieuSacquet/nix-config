@@ -121,6 +121,7 @@ in {
 
     # Enable KBE
 
+
     # Enable Plasma
     services.desktopManager.plasma6.enable = true;
     programs.kdeconnect.enable = true; # enable kdeconnect
@@ -227,7 +228,9 @@ in {
     nixpkgs.config.allowUnfree = true;
 
 
-    programs.niri.enable = false;
+    programs.niri.enable = true;
+
+    services.displayManager.defaultSession = "plasma";
 
     programs.obs-studio = {
         enable = true;
@@ -254,7 +257,7 @@ in {
     };
 
     programs.hyprland = {
-        enable = true;
+        enable = false;
         withUWSM = true; # recommended for most users
         xwayland.enable = true; # Xwayland can be disabled.
     };
@@ -280,7 +283,7 @@ in {
         flatpak
         # superfile
         inputs.zen-browser.packages.${stdenv.hostPlatform.system}.default
-        inputs.hyprmod.packages.${stdenv.hostPlatform.system}.default
+        # inputs.hyprmod.packages.${stdenv.hostPlatform.system}.default
         clang
         cmake
         pkg-config
