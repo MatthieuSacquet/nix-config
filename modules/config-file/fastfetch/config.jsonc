@@ -179,6 +179,26 @@
       "type": "terminal",
       "keyIcon": ""
     },
+    {
+      "type": "cpu",
+      "keyIcon": "",
+      "temp": false,
+      "showPeCoreCount": true,
+      "tempSensor": ""
+    },
+    {
+      "type": "gpu",
+      "keyIcon": "󰾲",
+      "driverSpecific": false,
+      "detectionMethod": "pci",
+      "temp": false,
+      "hideType": "none",
+      "percent": {
+        "green": 50,
+        "yellow": 80,
+        "type": 0
+      }
+    },
     "break",
   ]
 }
