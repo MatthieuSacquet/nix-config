@@ -286,7 +286,6 @@ in {
         pkg-config
         grc # for fish
         cbonsai
-        fasd # for fish
         man-pages
         man-pages-posix
 
