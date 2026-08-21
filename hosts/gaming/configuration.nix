@@ -259,7 +259,6 @@ in {
         libGL
         libGLU
         grc # for fish
-        fasd # for fish
         zed-editor
         appimage-run
         # inputs.slippi.packages.x86_64-linux.default
