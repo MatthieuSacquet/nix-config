@@ -4,8 +4,8 @@
 
   programs.oh-my-posh = {
 	enable = true;
-	 # useTheme = "blue-owl";
-	 useTheme = "craver";
+	 useTheme = "blue-owl";
+	 # useTheme = "craver";
   };
 
 }
