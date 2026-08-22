@@ -68,7 +68,7 @@ output "eDP-1" {
     mode "1920x1200@120.030"
 
     // You can use integer or fractional scale, for example use 1.5 for 150% scale.
-    scale 1.4
+    scale 1.2
 
     // Transform allows to rotate the output counter-clockwise, valid values are:
     // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
@@ -483,10 +483,9 @@ binds {
     Mod+V       { toggle-window-floating; }
     Mod+Shift+V { switch-focus-between-floating-and-tiling; }
 
-
-    Print { screenshot; }
-    Ctrl+Print { screenshot-screen; }
-    Alt+Print { screenshot-window; }
+    Print { spawn-sh "hyprshot -m output -o ~/Pictures/Screenshots"; }
+    Ctrl+Print { spawn-sh "hyprshot -m window -o ~/Pictures/Screenshots"; }
+    Alt+Print { spawn-sh "hyprshot -m region -o ~/Pictures/Screenshots"; }
 
     // Applications such as remote-desktop clients and software KVM switches may
     // request that niri stops processing the keyboard shortcuts defined here
