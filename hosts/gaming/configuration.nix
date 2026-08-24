@@ -270,6 +270,8 @@ in {
         mumble # install voice-chat
         protonup-qt # GUI for installing custom Proton versions like GE_Proton
 
+        devenv
+
         (writeTextDir "share/sddm/themes/breeze/theme.conf.user" ''
         [General]
         background = "${background-package}"
