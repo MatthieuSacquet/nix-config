@@ -57,6 +57,7 @@
         jq # for Update noctalia shell settings
 
         google-chrome
+        putty
     ];
 
     programs.btop.settings.selected_battery = "BAT1";

@@ -70,13 +70,26 @@
                     nvim-web-devicons.enable = true;
                 };
 
-                autocomplete.nvim-cmp = {
-                    enable = true;
-                    mappings = {
-                        confirm = "<CR>";
-                        complete = "<C-Space>";
-                        next = "<Tab>";
-                        previous = "<S-Tab>";
+                autocomplete = {
+                    nvim-cmp = {
+                        enable = false;
+                        mappings = {
+                            confirm = "<CR>";
+                            complete = "<C-Space>";
+                            next = "<Tab>";
+                            previous = "<S-Tab>";
+                            close = "<C-e>";
+                        };
+                    };
+                    blink-cmp = {
+                        enable = true;
+                        mappings = {
+                            confirm = "<CR>";
+                            complete = "<C-Space>";
+                            next = "<Tab>";
+                            previous = "<S-Tab>";
+                            close = "<C-e>";
+                        };
                     };
                 };
 
