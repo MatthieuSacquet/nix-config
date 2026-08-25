@@ -5,7 +5,7 @@
 }:
 # <leader>f
 {
-    
+
     programs.nvf.settings.vim = {
         keymaps = [
             {

@@ -3,9 +3,9 @@
 {
 
   programs.oh-my-posh = {
-	enable = true;
-	 useTheme = "blue-owl";
-	 # useTheme = "craver";
+    enable = true;
+        useTheme = "json";
+        # useTheme = "craver";lambdageneration
   };
 
 }

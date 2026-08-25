@@ -9,7 +9,7 @@
         terminal = {
             toggleterm = {
                 enable = true;
-                mappings.open = "<c-t>";
+                mappings.open = "<leader>to";
                 setupOpts.direction = "horizontal";
 
                 lazygit = {

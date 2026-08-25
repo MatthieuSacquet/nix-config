@@ -8,8 +8,8 @@
     programs.nvf.settings.vim = {
         theme = {
             enable = true;
-            name = "onedark";
-            style = "warmer";
+            name = "gruvbox";
+            style = "dark";
             transparent = false;
         };
     };
