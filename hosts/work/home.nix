@@ -67,7 +67,7 @@
     programs.fish.shellAliases = {
         "n" = "nvim";
         "ls" = "lsd";
-        "rebuild" = "sudo nixos-rebuild switch --flake ~/nix-config/#nixos";
+        "rebuild" = "sudo nixos-rebuild switch --flake ~/nix-config/#work";
         "update" = "cd ~/nix-config && nix flake update && rebuild";
         "eject" = "udisksctl unmount -b";
         "mt" = "udisksctl mount -b";

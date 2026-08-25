@@ -40,10 +40,10 @@
     outputs = { self, nixpkgs, nvf, ... }@inputs: {
         # use "nixos", or your hostname as the name of the configuration
         # it's a better practice than "default" shown in the video
-        nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+        nixosConfigurations.work = nixpkgs.lib.nixosSystem {
             specialArgs = {inherit inputs;};
             modules = [
-                ./hosts/nixos/configuration.nix
+                ./hosts/work/configuration.nix
                 inputs.home-manager.nixosModules.default
                 inputs.chaotic.nixosModules.default # IMPORTANT
             ];
