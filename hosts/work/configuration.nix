@@ -49,7 +49,7 @@ in {
                 device = "nodev";
             };
         };
-        kernelPackages = pkgs.linuxPackages_latest;
+        kernelPackages = pkgs.linuxPackages_cachyos;
     };
 
     swapDevices = [
@@ -156,6 +156,7 @@ in {
     console.keyMap = "fr";
 
     # Enable sound with pipewire.
+
     services.pulseaudio.enable = false;
     security.rtkit.enable = true;
     services.pipewire = {
@@ -265,11 +266,16 @@ in {
     environment.systemPackages = with pkgs; [
         vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
         wget
+
+        xdg-utils
+
         devenv
         kitty
         neovim
         fastfetch
-        discord
+
+        # discord
+
         git
         btop
         solaar
@@ -296,6 +302,10 @@ in {
         inetutils # for install telnet ( there are also other command for network )
 
         xwayland-satellite
+
+        rpi-imager
+
+        mako
 
         (writeTextDir "share/sddm/themes/breeze/theme.conf.user" ''
         [General]

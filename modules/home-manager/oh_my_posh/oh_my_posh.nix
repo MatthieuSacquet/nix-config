@@ -4,7 +4,7 @@
 
   programs.oh-my-posh = {
     enable = true;
-        useTheme = "json";
+        useTheme = "cobalt2";
         # useTheme = "craver";lambdageneration
   };
 
