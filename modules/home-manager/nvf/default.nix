@@ -93,6 +93,8 @@
                     };
                 };
 
+                minimap.minimap-vim.enable = false;
+
                 ui = {
                     borders.enable = true;
                 };
@@ -104,7 +106,8 @@
                 projects.project-nvim = {
                     enable = true;
                     setupOpts = {
-                        manual_mode = true;
+                        detection_methods = ["pattern"];
+                        manual_mode = false;
                         patterns = [ ".git" "Makefile" "CMakeLists.txt"];
                     };
                 };
