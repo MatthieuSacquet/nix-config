@@ -279,7 +279,9 @@ in {
         git
         btop
         solaar
+
         caligula # for flash usb
+
         ripgrep
         dust
         tree
