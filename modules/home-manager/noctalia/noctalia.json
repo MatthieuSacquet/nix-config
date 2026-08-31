@@ -279,7 +279,7 @@
   },
   "wallpaper": {
     "enabled": true,
-    "overviewEnabled": false,
+    "overviewEnabled": true,
     "directory": "/home/matth/Pictures/wallpapers",
     "monitorDirectories": [],
     "enableMultiMonitorDirectories": false,

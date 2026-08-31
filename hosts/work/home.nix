@@ -62,6 +62,8 @@
         viu
 
         vscode
+
+        nirimod
     ];
 
     programs.btop.settings.selected_battery = "BAT1";

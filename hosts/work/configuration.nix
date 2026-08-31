@@ -49,7 +49,7 @@ in {
                 device = "nodev";
             };
         };
-        kernelPackages = pkgs.linuxPackages_cachyos;
+        kernelPackages = pkgs.linuxPackages_latest;
     };
 
     swapDevices = [

@@ -8,6 +8,7 @@
             theme_background = false;
             graph_symbol = "block";
             vim_keys = true;
+            update_ms = 1000;
         };
     };
 }
