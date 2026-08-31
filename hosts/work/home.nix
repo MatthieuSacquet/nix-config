@@ -60,6 +60,8 @@
         putty
 
         viu
+
+        vscode
     ];
 
     programs.btop.settings.selected_battery = "BAT1";

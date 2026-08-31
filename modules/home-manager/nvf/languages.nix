@@ -58,6 +58,8 @@
                 enable = true;
                 treesitter.jsPackage = pkgs.vimPlugins.nvim-treesitter.grammarPlugins.javascript;
             };
+
+            ##-WEB languages-##
         };
     };
 }
