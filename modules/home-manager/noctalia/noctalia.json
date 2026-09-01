@@ -334,7 +334,14 @@
     "clipboardWatchTextCommand": "wl-paste --type text --watch cliphist store",
     "clipboardWatchImageCommand": "wl-paste --type image --watch cliphist store",
     "position": "center",
-    "pinnedApps": [],
+    "pinnedApps": [
+      "zen",
+      "com.discordapp.Discord",
+      "org.gnome.Nautilus",
+      "org.kde.dolphin",
+      "io.missioncenter.MissionCenter",
+      "dev.zed.Zed"
+    ],
     "sortByMostUsed": true,
     "terminalCommand": "alacritty -e",
     "customLaunchPrefixEnabled": false,
