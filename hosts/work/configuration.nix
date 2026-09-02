@@ -229,7 +229,9 @@ in {
     programs.firefox.enable = true;
 
     # Allow unfree packages
-    nixpkgs.config.allowUnfree = true;
+    nixpkgs.config = {
+        allowUnfree = true;
+    };
 
 
     programs.niri.enable = true;
@@ -253,12 +255,6 @@ in {
     # $ nix search wget
 
     programs.gamemode.enable = true; # for performance mode
-
-    programs.steam = {
-        enable = true; # install steam
-        remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-        dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-    };
 
     programs.hyprland = {
         enable = false;
@@ -317,7 +313,6 @@ in {
         background = "${background-package}"
         '')
         arduino-cli
-
     ];
     system.stateVersion = "25.11"; # Did you read the comment?
 

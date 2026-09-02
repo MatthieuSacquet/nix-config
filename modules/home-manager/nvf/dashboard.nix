@@ -33,6 +33,7 @@
                         { icon = " "; desc = "Live grep"; key = "g"; action = "Telescope live_grep"; }
                         { icon = " "; desc = "Find project"; key = "p"; action = "Telescope projects"; }
                         { icon = "⚙ "; desc = "Config"; key = "c"; action = "Oil ~/nix-config/modules/home-manager/nvf"; }
+                        { icon = "📓︎"; desc = "Take a note"; key = "n"; action = "Neorg workspace notes"; }
                         { icon = " "; desc = "Quit"; key = "q"; action = "qa"; }
                     ];
                 };
