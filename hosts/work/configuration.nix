@@ -114,6 +114,8 @@ in {
         LC_TIME = "fr_FR.UTF-8";
     };
 
+    virtualisation.docker.enable = true;
+
     # Enable the X11 windowing system.
     services.xserver.enable = true;
 
@@ -208,6 +210,7 @@ in {
             "networkmanager"
             "wheel"
             "dialout"
+            "docker"
         ];
         packages = with pkgs; [
         #  thunderbird

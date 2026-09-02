@@ -97,6 +97,8 @@
 
                 ui = {
                     borders.enable = true;
+                    colorful-menu-nvim.enable = true;
+                    colorizer.enable = true;
                 };
 
                 comments.comment-nvim.enable = true;

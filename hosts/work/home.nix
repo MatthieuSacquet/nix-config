@@ -64,6 +64,8 @@
         vscode
 
         nirimod
+
+        postman
     ];
 
     programs.btop.settings.selected_battery = "BAT1";
@@ -75,6 +77,7 @@
         "update" = "cd ~/nix-config && nix flake update && rebuild";
         "eject" = "udisksctl unmount -b";
         "mt" = "udisksctl mount -b";
+        "c" = "clear";
     };
 
     programs.kitty.shellIntegration.enableFishIntegration = true;
