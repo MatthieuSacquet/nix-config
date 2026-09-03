@@ -66,6 +66,8 @@
         nirimod
 
         postman
+
+        antigravity-ide
     ];
 
     programs.btop.settings.selected_battery = "BAT1";
@@ -110,6 +112,7 @@
         ".config/hypr".source = ../../modules/config-file/hypr;
         ".config/fastfetch".source = ../../modules/config-file/fastfetch;
         ".config/niri".source = ../../modules/config-file/niri;
+        # ".config/noctalia".source = ../../modules/config-file/noctalia;
 
     };
     # home.file.".config/hypr".source = ../../modules/config-file/hypr;

@@ -6,8 +6,9 @@
     ];
 
     # configure options
-    programs.noctalia-shell = {
+    programs.noctalia = {
         enable = true;
-        settings = builtins.fromJSON (builtins.readFile ./noctalia.json);
+        systemd.enable = true;
+        # settings = builtins.fromJSON (builtins.readFile ./noctalia.json);
     };
 }

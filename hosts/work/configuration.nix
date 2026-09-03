@@ -313,6 +313,13 @@ in {
         background = "${background-package}"
         '')
         arduino-cli
+
+        libreoffice-qt
+        hunspell
+        hunspellDicts.fr-any
+        hunspellDicts.en-us
+
+        # noctalia-shell
     ];
     system.stateVersion = "25.11"; # Did you read the comment?
 
