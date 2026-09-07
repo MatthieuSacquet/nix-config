@@ -37,6 +37,11 @@ output "eDP-1" {
     position x=1280 y=0
 }
 
+layer-rule {
+    match namespace="^noctalia-wallpaper"
+    place-within-backdrop true
+}
+
 layout {
     preset-column-widths {
         proportion 0.33333
@@ -104,6 +109,7 @@ binds {
 
     // Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen" { spawn-sh "noctalia msg session lock"; }
+    Super+Alt+H hotkey-overlay-title="hibernate" { spawn-sh "systemctl hibernate"; }
 
     Mod+X { spawn-sh "noctalia msg settings-open"; }
     Mod+Space { spawn-sh "noctalia msg panel-toggle launcher"; }
