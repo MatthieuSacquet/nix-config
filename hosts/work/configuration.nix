@@ -271,6 +271,7 @@ in {
         devenv
         kitty
         neovim
+        zed-editor
         fastfetch
 
         # discord

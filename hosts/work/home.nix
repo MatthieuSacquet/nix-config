@@ -39,7 +39,7 @@
         arduino-ide
         mission-center
         lazygit
-        zed-editor
+        gitui
         ripgrep
         lsd
         bat
