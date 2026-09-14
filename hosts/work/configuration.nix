@@ -236,7 +236,7 @@ in {
 
     programs.niri.enable = true;
 
-    services.displayManager.defaultSession = "plasma";
+    services.displayManager.defaultSession = "niri";
 
     programs.obs-studio = {
         enable = true;
