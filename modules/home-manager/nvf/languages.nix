@@ -37,6 +37,10 @@
                 treesitter.enable = true;
             };
 
+            go = {
+                enable = true;
+            };
+
             ##-WEB languages-##
 
             html.enable = true;

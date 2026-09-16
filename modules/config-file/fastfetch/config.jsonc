@@ -176,6 +176,14 @@
       "detectPlugin": true
     },
     {
+      "type": "font",
+      "keyIcon": ""
+    },
+    {
+      "type": "terminalfont",
+      "keyIcon": ""
+    },
+    {
       "type": "terminal",
       "keyIcon": ""
     },

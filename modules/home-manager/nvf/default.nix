@@ -29,6 +29,7 @@
 
         settings = {
             vim = {
+
                 viAlias = true;
                 vimAlias = true;
 
