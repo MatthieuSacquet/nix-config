@@ -50,7 +50,6 @@ in {
             systemd-boot.enable = false;
         };
         # kernelPackages = pkgs.linuxPackages_cachyos;
-        kernelPackages = pkgs.linuxPackages_cachyos;
     };
 
     swapDevices = [
@@ -99,18 +98,6 @@ in {
 
     # Enable the X11 windowing system.
     services.xserver.enable = true;
-
-    # Enable the GNOME Desktop Environment.
-    services.displayManager.gdm.enable = false;
-    services.desktopManager.gnome.enable = false;
-
-    # Enable Cinnamon
-
-    services.xserver.desktopManager.cinnamon.enable = false;
-    # services.xserver.displayManager.lightdm.enable = true;
-    environment.cinnamon.excludePackages = [
-        pkgs.blueman
-    ];
 
     # Enable KBE
 
@@ -260,11 +247,36 @@ in {
         libGLU
         grc # for fish
         zed-editor
+
         appimage-run
+
+
         # inputs.slippi.packages.x86_64-linux.default
         slippi-netplay
         slippi-launcher
+
+
+        # support both 32-bit and 64-bit applications
+        wineWow64Packages.stable
+
+        # support 32-bit only
         wine
+
+        # support 64-bit only
+        (wine.override { wineBuild = "wine64"; })
+
+        # support 64-bit only
+        wine64
+
+        # wine-staging (version with experimental features)
+        wineWow64Packages.staging
+
+        # winetricks (all versions)
+        winetricks
+
+        # native wayland support (unstable)
+        wineWow64Packages.waylandFull
+
         heroic # install heroic launcher
         lutris # install lutris launcher
         mumble # install voice-chat
@@ -276,6 +288,8 @@ in {
         [General]
         background = "${background-package}"
         '')
+
+        dolphin-emu
     ];
 
     # Some programs need SUID wrappers, can be configured further or are
