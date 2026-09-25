@@ -29,7 +29,7 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
-        chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+        # chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
         hyprmod = {
             url = "github:BlueManCZ/hyprmod";
@@ -51,7 +51,7 @@
             modules = [
                 ./hosts/work/configuration.nix
                 inputs.home-manager.nixosModules.default
-                inputs.chaotic.nixosModules.default # IMPORTANT
+                # inputs.chaotic.nixosModules.default # IMPORTANT
             ];
         };
         nixosConfigurations.gaming = nixpkgs.lib.nixosSystem {
@@ -59,7 +59,7 @@
             modules = [
                 ./hosts/gaming/configuration.nix
                 inputs.home-manager.nixosModules.default
-                inputs.chaotic.nixosModules.default # IMPORTANT
+                # inputs.chaotic.nixosModules.default # IMPORTANT
             ];
         };
         nixosConfigurations.brike = nixpkgs.lib.nixosSystem {
@@ -67,7 +67,7 @@
             modules = [
                 ./hosts/brike/configuration.nix
                 inputs.home-manager.nixosModules.default
-                inputs.chaotic.nixosModules.default # IMPORTANT
+                # inputs.chaotic.nixosModules.default # IMPORTANT
             ];
         };
     };
